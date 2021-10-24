@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Custom Themes</string>
+    <string name="primary">primary</string>
+    <string name="secondary">secondary</string>
+    <string name="success">success</string>
+    <string name="error">error</string>
+    <string name="light_mode">light mode</string>
+    <string name="dark_mode">dark mode</string>
+</resources>
