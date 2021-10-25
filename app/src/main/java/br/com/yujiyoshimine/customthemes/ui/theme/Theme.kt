@@ -10,18 +10,20 @@ import androidx.compose.ui.graphics.Color
 
 
 fun lightColors() = CustomColors(
-    primary = Color(0xFFFFFFFF),
-    secondary = Color(0xFFFFFFFF),
-    success = Color(0xFFFFFFFF),
-    error = Color(0xFFFFFFFF),
+    primary = Color(0xFFE67E22),
+    secondary = Color(0xFFD35400),
+    background = Color(0xFFECF0F1),
+    success = Color(0xFF2ECC71),
+    error = Color(0xFFE74C3C),
     isLight = true,
 )
 
 fun darkColors() = CustomColors(
-    primary = Color(0xFFFFFFFF),
-    secondary = Color(0xFFFFFFFF),
-    success = Color(0xFFFFFFFF),
-    error = Color(0xFFFFFFFF),
+    primary = Color(0xFFE67E22),
+    secondary = Color(0xFFD35400),
+    background = Color(0xFF353B48),
+    success = Color(0xFF27AE60),
+    error = Color(0xFFC0392B),
     isLight = false,
 )
 
@@ -34,10 +36,8 @@ fun CustomTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
-    val rememberedColors = remember {
-        val currentColor = if (darkColors != null && darkTheme) darkColors else colors
-        currentColor.copy()
-    }.apply { updateColorsFrom(colors) }
+    val currentColor = remember { if (darkColors != null && darkTheme) darkColors else colors }
+    val rememberedColors = remember { currentColor.copy() }.apply { updateColorsFrom(currentColor) }
     CompositionLocalProvider(
         LocalColors provides rememberedColors,
         LocalSpaces provides spaces,

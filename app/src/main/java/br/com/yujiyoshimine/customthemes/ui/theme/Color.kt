@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 class CustomColors(
     primary: Color,
     secondary: Color,
+    background: Color,
     success: Color,
     error: Color,
     isLight: Boolean,
@@ -25,18 +26,23 @@ class CustomColors(
     var error by mutableStateOf(error)
         private set
 
+    var background by mutableStateOf(background)
+        private set
+
     var isLight by mutableStateOf(isLight)
         private set
 
     fun copy(
         primary: Color = this.primary,
         secondary: Color = this.secondary,
+        background: Color = this.background,
         success: Color = this.success,
         error: Color = this.error,
         isLight: Boolean = this.isLight,
     ) = CustomColors(
         primary = primary,
         secondary = secondary,
+        background = background,
         success = success,
         error = error,
         isLight = isLight,
@@ -46,7 +52,9 @@ class CustomColors(
         primary = other.primary
         secondary = other.secondary
         success = other.success
+        background = other.background
         error = other.error
+        isLight = other.isLight
     }
 }
 
