@@ -1,7 +1,6 @@
 package br.com.yujiyoshimine.customthemes.view
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
@@ -10,29 +9,29 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import br.com.yujiyoshimine.customthemes.R
 import br.com.yujiyoshimine.customthemes.ui.theme.CustomTheme
 
 @Composable
-fun ColumnScope.ColorSection() {
-    Section(stringResource(R.string.colors)) {
-        TextItem(
+fun ColorSection() {
+    Section(title = stringResource(R.string.colors)) {
+        ColorItem(
             title = stringResource(id = R.string.primary),
             background = CustomTheme.colors.primary,
         )
-        TextItem(
+        ColorItem(
             title = stringResource(id = R.string.success),
             background = CustomTheme.colors.success,
         )
-        TextItem(
+        ColorItem(
             title = stringResource(id = R.string.error),
             background = CustomTheme.colors.error,
         )
     }
 }
+
 @Composable
-private fun TextItem(
+private fun ColorItem(
     title: String,
     background: Color,
 ) {
@@ -40,8 +39,9 @@ private fun TextItem(
         text = title,
         textAlign = TextAlign.Center,
         modifier = Modifier
+            .padding(top = CustomTheme.spaces.large)
             .background(background)
-            .padding(vertical = 16.dp)
+            .padding(vertical = CustomTheme.spaces.large)
             .fillMaxWidth()
     )
 }

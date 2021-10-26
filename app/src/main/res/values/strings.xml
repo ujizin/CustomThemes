@@ -6,5 +6,13 @@
     <string name="error">error</string>
     <string name="light_mode">light mode</string>
     <string name="dark_mode">dark mode</string>
-    <string name="colors">Colors</string>
+    <string name="colors">colors</string>
+    <string name="typography">tipography</string>
+    <string name="headline1">headline1</string>
+    <string name="body1">body1</string>
+    <string name="spaces">spaces</string>
+    <string name="medium">medium</string>
+    <string name="small">small</string>
+    <string name="large">large</string>
+    <string name="extralarge">extralarge</string>
 </resources>

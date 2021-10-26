@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 
 fun lightColors() = CustomColors(
     primary = Color(0xFFE67E22),
+    text = Color(0xFF000000),
     background = Color(0xFFF5F5F5),
     success = Color(0xFF2ECC71),
     error = Color(0xFFE74C3C),
@@ -19,6 +20,7 @@ fun lightColors() = CustomColors(
 
 fun darkColors() = CustomColors(
     primary = Color(0xFFDF6900),
+    text = Color(0xFFFFFFFF),
     background = Color(0xFF353B48),
     success = Color(0xFF44BD32),
     error = Color(0xFFC23616),
@@ -41,6 +43,6 @@ fun CustomTheme(
         LocalSpaces provides spaces,
         LocalTypography provides typography,
     ) {
-        ProvideTextStyle(typography.body1, content = content)
+        ProvideTextStyle(typography.body1.copy(color = CustomTheme.colors.text), content = content)
     }
 }

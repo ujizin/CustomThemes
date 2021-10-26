@@ -3,8 +3,6 @@ package br.com.yujiyoshimine.customthemes
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.annotation.StringRes
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -16,13 +14,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import br.com.yujiyoshimine.customthemes.ui.theme.CustomTheme
 import br.com.yujiyoshimine.customthemes.ui.theme.darkColors
 import br.com.yujiyoshimine.customthemes.view.ColorSection
 import br.com.yujiyoshimine.customthemes.view.SpaceSection
+import br.com.yujiyoshimine.customthemes.view.TypographySection
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,8 +41,8 @@ private fun ThemeUI() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(horizontal = CustomTheme.spaces.large)
                 .verticalScroll(rememberScrollState()),
-            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             ColorSection()
             SpaceSection()
@@ -58,10 +55,15 @@ private fun ThemeUI() {
 @Composable
 private fun TopAppBar() {
     TopAppBar(
+        backgroundColor = Color.Transparent,
+        elevation = 1.dp,
+        actions = {
+
+        },
         title = {
             Text(
                 text = stringResource(id = R.string.app_name),
-                style = CustomTheme.typography.h1)
+                style = CustomTheme.typography.h1.copy(color = CustomTheme.colors.text))
         }
     )
 }

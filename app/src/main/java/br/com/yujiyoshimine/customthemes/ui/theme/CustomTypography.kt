@@ -15,7 +15,7 @@ data class CustomTypography(
     val body1: TextStyle = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
+        fontSize = 18.sp,
     ),
 )
 
