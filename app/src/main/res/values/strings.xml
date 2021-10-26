@@ -6,4 +6,5 @@
     <string name="error">error</string>
     <string name="light_mode">light mode</string>
     <string name="dark_mode">dark mode</string>
+    <string name="colors">Colors</string>
 </resources>

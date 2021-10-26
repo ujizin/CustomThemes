@@ -11,19 +11,17 @@ import androidx.compose.ui.graphics.Color
 
 fun lightColors() = CustomColors(
     primary = Color(0xFFE67E22),
-    secondary = Color(0xFFD35400),
-    background = Color(0xFFECF0F1),
+    background = Color(0xFFF5F5F5),
     success = Color(0xFF2ECC71),
     error = Color(0xFFE74C3C),
     isLight = true,
 )
 
 fun darkColors() = CustomColors(
-    primary = Color(0xFFE67E22),
-    secondary = Color(0xFFD35400),
+    primary = Color(0xFFDF6900),
     background = Color(0xFF353B48),
-    success = Color(0xFF27AE60),
-    error = Color(0xFFC0392B),
+    success = Color(0xFF44BD32),
+    error = Color(0xFFC23616),
     isLight = false,
 )
 
